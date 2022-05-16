@@ -1,0 +1,25 @@
+.profile {
+    background-color: rgba(239, 240, 220, 0.945);
+    max-width: max-content;
+    padding: 20px;
+    margin: 20px;
+}
+
+.description {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats {
+    display: flex;
+    list-style: none;
+}
+
+.label {
+    padding-right: 10px;
+}
+
+.quantity {
+    display: flex;
+}

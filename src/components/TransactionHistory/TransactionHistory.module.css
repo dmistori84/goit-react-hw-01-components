@@ -1,0 +1,19 @@
+.transactionHistory {
+    background: rgb(190, 190, 248);
+    margin: 10px;
+}
+
+.tr {
+    background: rgb(235, 225, 225);
+    padding: 20px;
+    margin: 10px;
+}
+
+.td {
+    padding: 10px;
+}
+
+.th {
+    padding: 20px;
+    text-transform: uppercase;
+}

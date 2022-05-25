@@ -1,0 +1,17 @@
+.title {
+    text-transform: uppercase;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+}
+
+.item {
+    padding-right: 15px;
+}
+
+.label {
+    display: flex;
+}
+

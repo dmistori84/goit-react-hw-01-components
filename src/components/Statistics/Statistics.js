@@ -9,11 +9,11 @@ const Statistics = ({ stats, title }) => {
                  
             <ul className={styles.list}>
                 {
-                    stats.map(document => { 
+                    stats.map(({id, label, percentage}) => { 
                         return (
-                        <li key={document.id} className={styles.item}>
-                            <span className={styles.label}>{document.label}</span>
-                            <span className={styles.percentage}>{document.percentage}%</span>
+                        <li key={id} className={styles.item}>
+                            <span className={styles.label}>{label}</span>
+                            <span className={styles.percentage}>{percentage}%</span>
                         </li>
                         )
                     })
@@ -24,7 +24,11 @@ const Statistics = ({ stats, title }) => {
 }
 
 Statistics.propTypes = {
-    stats: PropTypes.array.isRequired,
+    stats: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+        label: PropTypes.string,
+        percentage: PropTypes.number,
+    })),
     title: PropTypes.string,
 }
 

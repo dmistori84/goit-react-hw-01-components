@@ -5,14 +5,14 @@ const FriendList = ({ friends }) => {
   return (  
     <ul className={styles.list}>
         {
-            friends.map(friend => { 
+            friends.map(({id, isOnline, avatar, name}) => { 
                 return (
-                    <li key={friend.id} className={styles.item}>
-                        <span className={friend.isOnline ? styles.status : styles.statusRed}>
-                            {friend.isOnline}
+                    <li key={id} className={styles.item}>
+                        <span className={isOnline ? styles.status : styles.statusRed}>
+                            {isOnline}
                         </span>
-                        <img className={styles.avatar} src={friend.avatar} alt={friend.name} width="48" />
-                        <p className={styles.name}>{friend.name}</p>
+                        <img className={styles.avatar} src={avatar} alt={name} width="48" />
+                        <p className={styles.name}>{name}</p>
                     </li>
                 )
             })
@@ -21,7 +21,9 @@ const FriendList = ({ friends }) => {
 }
 
 FriendList.propTypes = {
-    friends: PropTypes.array,
+    friends: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired
+    })),
 }
 
 export default FriendList;
